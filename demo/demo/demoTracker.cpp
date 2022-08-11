@@ -59,10 +59,13 @@ int main(int argc, char *argv[]) {
     if(!show)
 	    SAVE_RESULT = true;
 
+    //SAVE_RESULT = true;
+    printf("SHow results:%d \n", SAVE_RESULT);
     tk::dnn::CenterTrack ctrack;
 
     tk::dnn::TrackingNN *trackNN;  
 
+    printf("calib_params:%s \n",calib_params.c_str());
     switch(ntype)
     {
         case 'c':
@@ -80,6 +83,7 @@ int main(int argc, char *argv[]) {
         for(int bi=0; bi< n_batch; ++bi)
             calibs.push_back(calib);
     }
+    printf("begin to init trackNN <<<<<<<<<<< \n");
     trackNN->init(net, n_classes, n_batch, conf_thresh, t3d, calibs);
 
     gRun = true;
@@ -103,7 +107,9 @@ int main(int argc, char *argv[]) {
     std::vector<cv::Mat> batch_frame;
     std::vector<cv::Mat> batch_dnn_input;
 
-    while(gRun) {
+    while(gRun) 
+    
+    {
         batch_dnn_input.clear();
         batch_frame.clear();
         

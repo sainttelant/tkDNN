@@ -4,6 +4,7 @@ Currently tkDNN supports only CenterTrack as 3DOD & 2D/3D Tracker network.
 
 ## 3D Object Detection
 
+1\ need to manual compile yaml-cpp, from github, be simple.easy
 To run the 3D object detection demo follow these steps (example with CenterNet based on DLA34):
 ```
 rm dla34_cnet3d_fp32.rt        # be sure to delete(or move) old tensorRT files

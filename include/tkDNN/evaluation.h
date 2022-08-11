@@ -6,7 +6,6 @@
 #include <algorithm>
 
 #include <yaml-cpp/yaml.h>
-
 #include "tkdnn.h"
 #include "BoundingBox.h"
 

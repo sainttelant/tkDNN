@@ -17,7 +17,6 @@
 
 #include <yaml-cpp/yaml.h>
 
-
 void readCalibrationMatrix(const std::string& path, cv::Mat& calib_mat);
 
 #endif //DEMO_UTILS_H

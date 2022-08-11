@@ -782,7 +782,8 @@ void CenterTrack::draw(std::vector<cv::Mat>& frames) {
                                     cv::Scalar(255, 0, 255), 2);
                 }
                 //3d
-                if(mode3D && t.det_res.z > 1){
+                //if(mode3D && t.det_res.z > 1){
+                 if(mode3D){   
                     r.at<float>(0,0) = std::cos(t.det_res.rot_y);
                     r.at<float>(0,2) = std::sin(t.det_res.rot_y);
                     r.at<float>(2,0) = -std::sin(t.det_res.rot_y);
