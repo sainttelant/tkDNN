@@ -102,7 +102,7 @@ int main(int argc, char *argv[]) {
     }
     cv::Mat frame;
     if(show)
-	    cv::namedWindow("detection", cv::WINDOW_NORMAL);
+	    cv::namedWindow("detection", 1);
     
     std::vector<cv::Mat> batch_frame;
     std::vector<cv::Mat> batch_dnn_input;
@@ -117,6 +117,7 @@ int main(int argc, char *argv[]) {
             cap >> frame; 
             if(!frame.data) 
                 break;
+            cv::resize(frame,frame,cv::Size(960,720),cv::INTER_NEAREST);
             batch_frame.push_back(frame);
 
             // this will be resized to the net format
