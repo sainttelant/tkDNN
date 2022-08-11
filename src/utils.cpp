@@ -21,7 +21,8 @@ bool fileExist(const char *fname) {
 }
 
 void downloadWeightsifDoNotExist(const std::string& input_bin, const std::string& test_folder, const std::string& weights_url){
-    if(!fileExist(input_bin.c_str())){
+    if(!fileExist(input_bin.c_str()))
+    {
         std::string mkdir_cmd = "mkdir " + test_folder; 
         std::string wget_cmd = "curl -tlsv1 -C - " + weights_url + " --output " + test_folder + "/weights.zip --user user:pass -O --retry 999 --retry-max-time 0";
 #ifdef __linux__
